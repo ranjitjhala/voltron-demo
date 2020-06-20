@@ -2,8 +2,11 @@
   <div class="home">
     <!-- <img alt="Vue logo" src="../assets/logo.png" />
     <HelloWorld msg="Welcome to Your Vue.js App" /> -->
-    <template v-if="isInstructor"><Instructor /></template>
-    <template v-else><Student /></template>
+    <br />
+    <b-container>
+      <template v-if="isInstructor"><Instructor /></template>
+      <template v-if="isStudent"><Student /></template>
+    </b-container>
   </div>
 </template>
 
@@ -27,5 +30,11 @@ export default class Home extends Vue {
   get isInstructor() {
     return this.$store.getters.userType == "instructor";
   }
+
+  get isStudent() {
+    return this.$store.getters.userType == "student";
+  }
+
+
 }
 </script>

@@ -51,7 +51,14 @@ export default new Vuex.Store({
 
     currentUser: ({ sessionUser }) => {
       return sessionUser;
-    }
+    },
+
+    // currentGroup: ({ buffers }) => {
+    //   switch (buffers.kind) {
+    //     case "student": return buffers.group;
+    //     default: return "none";
+    //   }
+    // }
   },
   modules: {}
 });

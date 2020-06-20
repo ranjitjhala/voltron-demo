@@ -17,15 +17,18 @@
 
 - [*] Navbar
 
-- [] login 
-    + [] /student       (name, email, group)
-    + [] /instructor    (name, email) 
+- [*] login 
+    + [*] /student       (name, email, group)
+    + [*] /instructor    (name, email) 
 
 - [] Buffer
     + [] /student
     + [] /instructor
 
+- [] Refactor student/instructor headers into single component.
+
 ## Project setup
+
 ```
 yarn install
 ```

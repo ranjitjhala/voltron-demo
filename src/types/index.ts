@@ -28,4 +28,5 @@ export interface AuthInfo {
 
 export interface User {
   name: string;
+  group: string;
 }
