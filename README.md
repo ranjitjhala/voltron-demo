@@ -1,5 +1,30 @@
 # voltron-demo
 
+## Views/Routes
+
+- `/login`
+- `/instructor`
+- `/student`
+
+## Components
+
+- `Navbar` 
+- `Buffer`
+- `SingleBuffer` 
+- `AllBuffers`
+
+## TODO
+
+- [*] Navbar
+
+- [] login 
+    + [] /student       (name, email, group)
+    + [] /instructor    (name, email) 
+
+- [] Buffer
+    + [] /student
+    + [] /instructor
+
 ## Project setup
 ```
 yarn install
