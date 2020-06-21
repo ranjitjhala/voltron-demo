@@ -1,5 +1,5 @@
 <template>
-  <div id="studentview">
+  <b-container>
     <div class="page-header">
       <b-row>
         <b-col lg="12" md="8" sm="4">
@@ -14,19 +14,20 @@
     <b-row>
       <b-col lg="12" md="8" sm="4">
         <div class="card border-primary mb-12">
-          <div class="card-header">Group {{ studentGroup }}</div>
+          <div class="card-header">Group {{ studentDivBuffer.buf.id }}</div>
           <div class="card-body">
-            <div v-bind:id="studentBufferDiv"></div>
+            <div v-bind:id="studentDivBuffer.div"></div>
           </div>
         </div>
       </b-col>
     </b-row>
-  </div>
+  </b-container>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
 import BufferService from "@/services/buffer";
+import { DivBuffer } from "../types";
 
 @Component
 export default class Student extends Vue {
@@ -36,18 +37,14 @@ export default class Student extends Vue {
     return this.$store.getters.currentUser.name;
   }
 
-  get studentGroup() {
-    return this.$store.getters.currentUser.group;
-  }
-
-  get studentBufferDiv() {
+  get studentDivBuffer(): DivBuffer {
     const buf = this.$store.getters.studentBuffer;
-    console.log("studentBufferDiv", buf);
-    return BufferService.codeBufferDiv(buf);
+    const div = BufferService.codeBufferDiv(buf);
+    return { buf: buf, div: div };
   }
 
   mounted() {
-    const buf = this.$store.getters.studentBuffer;
+    const buf = this.studentDivBuffer.buf;
     BufferService.initBuf(buf);
   }
 }

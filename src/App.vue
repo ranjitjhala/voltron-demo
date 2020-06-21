@@ -2,13 +2,11 @@
   <div id="app">
     <navbar />
 
-  <b-container>
-    <router-view />
-  </b-container>
+    <b-container>
+      <router-view />
+    </b-container>
 
-
-
-   <!--  <div>
+    <!--  <div>
   <b-jumbotron>
     <template v-slot:header>BootstrapVue</template>
 
@@ -28,7 +26,6 @@
     <b-button variant="success" href="#">Do Something Else</b-button>
   </b-jumbotron> 
 </div>-->
-
   </div>
 </template>
 
@@ -55,6 +52,22 @@
 #nav a.router-link-exact-active {
   color: #42b983;
 }
+
+.firepad {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  text-align: left;
+  line-height: normal;
+}
+
+#editor {
+  /** Setting height is also important, otherwise editor wont showup**/
+  height: 300px;
+}
 </style>
 
 <style lang="scss">
@@ -73,13 +86,11 @@ body {
 //     "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
 //     "Segoe UI Emoji", "Segoe UI Symbol" !important;
 // }
-
 </style>
 
 <script lang="ts">
 import { Vue, Component } from "vue-property-decorator";
-import { BootstrapVue }   from "bootstrap-vue";
-
+// import { BootstrapVue } from "bootstrap-vue";
 
 import Navbar from "@/components/Navbar.vue";
 import router from "@/router";

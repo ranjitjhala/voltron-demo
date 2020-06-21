@@ -15,17 +15,42 @@
 
 ## TODO
 
+Version 0
+
 - [*] Navbar
 
 - [*] login 
     + [*] /student       (name, email, group)
     + [*] /instructor    (name, email) 
 
-- [] Buffer
+- [*] Buffer
     + [*] /student
-    + [ ] /instructor
+    + [*] /instructor
+
+Version 1
+
+- [ ] With BINAH server
+    - [ ] /enroll
+    - [ ] /signup
+    - [ ] /login
+    - [ ] /student
+    - [ ] /instructor
+    - [ ] /create 
+
+- [ ] CREATE group
+
+- [ ] PUSH to all groups
+
+
+- [] Admin
+
+- [] Push
+
+## Other TODO
 
 - [] Refactor student/instructor headers into single component.
+
+- [] Cleanup nav-bar
 
 ## Project setup
 

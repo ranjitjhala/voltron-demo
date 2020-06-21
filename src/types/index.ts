@@ -4,6 +4,11 @@ export interface Buffer {
   text: string;
 }
 
+export interface DivBuffer { 
+  div: string;
+  buf: Buffer;
+}
+
 export interface Student { 
   kind: "student";
   user: User;

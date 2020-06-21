@@ -67,14 +67,6 @@ export default new Vuex.Store({
         default: return null;
       }
     },
-
-
-    // currentGroup: ({ buffers }) => {
-    //   switch (buffers.kind) {
-    //     case "student": return buffers.group;
-    //     default: return "none";
-    //   }
-    // }
   },
   modules: {}
 });

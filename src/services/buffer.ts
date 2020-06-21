@@ -1,8 +1,8 @@
-// import * as firebase from 'firebase';
-// import * as ace from "ace-builds";
-// import { Firepad } from "firepad";
-
 import { Buffer } from "@/types";
+
+declare const firebase:any; 
+declare const ace:any; 
+declare const Firepad:any; 
 
 //Initialize Firebase.
 //TODO: replace with your Firebase project configuration
