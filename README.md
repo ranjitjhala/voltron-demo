@@ -22,8 +22,8 @@
     + [*] /instructor    (name, email) 
 
 - [] Buffer
-    + [] /student
-    + [] /instructor
+    + [*] /student
+    + [ ] /instructor
 
 - [] Refactor student/instructor headers into single component.
 
