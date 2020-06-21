@@ -34,7 +34,5 @@ export default class Home extends Vue {
   get isStudent() {
     return this.$store.getters.userType == "student";
   }
-
-
 }
 </script>

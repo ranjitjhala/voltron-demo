@@ -16,8 +16,7 @@
         <div class="card border-primary mb-12">
           <div class="card-header">Group {{ studentGroup }}</div>
           <div class="card-body">
-            Ho ho.
-            <!-- <div v-bind:id="editorDiv(studentBuffer)"></div> -->
+            <div v-bind:id="studentBufferDiv"></div>
           </div>
         </div>
       </b-col>
@@ -27,6 +26,7 @@
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
+import BufferService from "@/services/buffer";
 
 @Component
 export default class Student extends Vue {
@@ -37,11 +37,18 @@ export default class Student extends Vue {
   }
 
   get studentGroup() {
-    // return "55";
-    console.log("studentGroup", 92);
-    const foo = this.$store.getters.currentUser;
-    console.log("studentGroup", foo);
-    return foo.group;
+    return this.$store.getters.currentUser.group;
+  }
+
+  get studentBufferDiv() {
+    const buf = this.$store.getters.studentBuffer;
+    console.log("studentBufferDiv", buf);
+    return BufferService.codeBufferDiv(buf);
+  }
+
+  mounted() {
+    const buf = this.$store.getters.studentBuffer;
+    BufferService.initBuf(buf);
   }
 }
 </script>

@@ -1,4 +1,5 @@
 export interface Buffer {
+  id:   number;
   hash: string;
   text: string;
 }

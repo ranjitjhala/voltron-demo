@@ -5,7 +5,7 @@ import ApiService from "@/services/api";
 
 Vue.use(Vuex);
 
-type State = { buffers: AppState, sessionUser: User | null };
+type State = { buffers: AppState; sessionUser: User | null };
 
 const initState: State = { buffers: { kind: "none" }, sessionUser: null };
 
@@ -13,9 +13,10 @@ export default new Vuex.Store({
   state: initState,
 
   mutations: {
-    setBuffers(state, bufs:AppState) {
+    setBuffers(state, bufs: AppState) {
       switch (bufs.kind) {
-        case "none": return;
+        case "none":
+          return;
         default: { 
           console.log("mutation-setBuffers", bufs);
           state.buffers = bufs;
@@ -52,6 +53,21 @@ export default new Vuex.Store({
     currentUser: ({ sessionUser }) => {
       return sessionUser;
     },
+
+    studentBuffer: ({ buffers }) => {
+      switch (buffers.kind) { 
+        case "student": return buffers.grpBuffer;
+        default: return null;
+      }
+    },
+
+    instructorBuffers: ({ buffers }) => {
+      switch (buffers.kind) { 
+        case "instructor": return buffers.allBuffers;
+        default: return null;
+      }
+    },
+
 
     // currentGroup: ({ buffers }) => {
     //   switch (buffers.kind) {
